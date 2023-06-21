@@ -493,9 +493,9 @@ static bool file_exists(const char *);
  * A function that searches for the source directory for a given
  * executable file name.
  *
- * @file_path. A pointer to a buffer where to store the source directory
+ * @param file_path. A pointer to a buffer where to store the source directory
  * with executable file name.
- * @file_name. A file name which to search for the source directory for.
+ * @param file_name. A file name which to search for the source directory for.
  */
 static void find_path_to_exec_file(char *file_path, const char *file_name)
 {
@@ -562,7 +562,7 @@ static bool is_kernel_or_procfs_log(const char *file_path)
 /*
  * A hook for open syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -595,7 +595,7 @@ static asmlinkage int hook_sys_open(struct pt_regs *regs)
 /*
  * A hook for openat syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -632,7 +632,7 @@ static asmlinkage int hook_sys_openat(struct pt_regs *regs)
 /*
  * A hook for write syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -676,7 +676,7 @@ static asmlinkage ssize_t hook_sys_write(struct pt_regs *regs)
 /*
  * A hook for writev syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -720,7 +720,7 @@ static asmlinkage ssize_t hook_sys_writev(struct pt_regs *regs)
 /*
  * A hook for pwrite64 syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -764,7 +764,7 @@ static asmlinkage ssize_t hook_sys_pwrite64(struct pt_regs *regs)
 /*
  * A hook for pwritev syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -808,7 +808,7 @@ static asmlinkage ssize_t hook_sys_pwritev(struct pt_regs *regs)
 /*
  * A hook for pwritev2 syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -852,7 +852,7 @@ static asmlinkage ssize_t hook_sys_pwritev2(struct pt_regs *regs)
 /*
  * A hook for chown syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -885,7 +885,7 @@ static asmlinkage int hook_sys_chown(struct pt_regs *regs)
 /*
  * A hook for lchown syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -918,7 +918,7 @@ static asmlinkage int hook_sys_lchown(struct pt_regs *regs)
 /*
  * A hook for fchown syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -957,7 +957,7 @@ static asmlinkage int hook_sys_fchown(struct pt_regs *regs)
 /*
  * A hook for fchownat syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -994,7 +994,7 @@ static asmlinkage int hook_sys_fchownat(struct pt_regs *regs)
 /*
  * A hook for chmod syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1027,7 +1027,7 @@ static asmlinkage int hook_sys_chmod(struct pt_regs *regs)
 /*
  * A hook for fchmod syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1066,7 +1066,7 @@ static asmlinkage int hook_sys_fchmod(struct pt_regs *regs)
 /*
  * A hook for fchmodat syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1103,7 +1103,7 @@ static asmlinkage int hook_sys_fchmodat(struct pt_regs *regs)
 /*
  * A hook for fork syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1138,7 +1138,7 @@ static asmlinkage pid_t hook_sys_fork(struct pt_regs *regs)
 /*
  * A hook for vfork syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1173,7 +1173,7 @@ static asmlinkage pid_t hook_sys_vfork(struct pt_regs *regs)
 /*
  * A hook for execve syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
@@ -1213,7 +1213,7 @@ static asmlinkage int hook_sys_execve(struct pt_regs *regs)
 /*
  * A hook for execveat syscall.
  *
- * @regs. A representation of registers(x86_64) for a real syscall.
+ * @param regs. A representation of registers(x86_64) for a real syscall.
  *
  * @return. Returned value of the real syscall.
  */
